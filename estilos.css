@@ -1,270 +1,281 @@
 /* configurações gerais da página */
 body {
-  margin: 0;
-  background: #112 url(images/stars2.jpg) repeat;
-  background-size: 75%;
-  font-family: "Lato", sans-serif;
-  color: #fff;
-  font-size: 18px;
+    margin: 0;
+    background: #112 url(images/stars2.jpg) repeat;
+    background-size: 75%;
+    font-family: "Lato", sans-serif;
+    color: #fff;
+    font-size: 18px;
 }
 
 p {
-  text-align: justify;
+    text-align: justify;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0.25em;
-  font-family: "Space Mono", monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0.25em;
+    font-family: "Space Mono", monospace;
 }
 
 /* fundo de estrelas esmaecendo */
 body::before,
 body::after {
-  content: " ";
-  display:block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: transparent url(images/twinkling.png) repeat;
-  animation: move-twink-back 500s linear infinite;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: transparent url(images/twinkling.png) repeat;
+    animation: move-twink-back 500s linear infinite;
 }
 
 body::after {
-  animation-direction: reverse;
+    animation-direction: reverse;
 }
 
 @keyframes move-twink-back {
-  from {  background-position: 0 0; }
-  to   {  background-position: -10000px 5000px; }
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
 }
 
 /* muda a cor da seleção para um azul bacana */
 *::selection {
-  background-color: #6dacff;
+    background-color: #6dacff;
 }
 
 /* layout do cabeçalho da página */
 header {
-  background-color: rgba(255, 255, 255, .1);
-  padding: 0 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  animation: chegando-de-cima 700ms cubic-bezier(0.18, 0.62, 0.22, 1) 0ms 1 forwards;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    animation: chegando-de-cima 700ms cubic-bezier(0.18, 0.62, 0.22, 1) 0ms 1
+        forwards;
 }
 
 header * {
-  transform: translate3d(0,-100%, 0);
-  animation: chegando-de-cima 700ms cubic-bezier(0.18, 0.62, 0.22, 1) 200ms 1 forwards;
+    transform: translate3d(0, -100%, 0);
+    animation: chegando-de-cima 700ms cubic-bezier(0.18, 0.62, 0.22, 1) 200ms 1
+        forwards;
 }
 
 header :nth-child(2n) {
-  animation-delay: 200ms;
+    animation-delay: 200ms;
 }
 
-header :nth-child(2n+1) {
-  animation-delay: 400ms;
+header :nth-child(2n + 1) {
+    animation-delay: 400ms;
 }
 
-header ul :nth-child(3n+1) {
-  animation-delay: 600ms;
+header ul :nth-child(3n + 1) {
+    animation-delay: 600ms;
 }
 
-header ul :nth-child(3n+2) {
-  animation-delay: 800ms;
+header ul :nth-child(3n + 2) {
+    animation-delay: 800ms;
 }
 
 header ul :nth-child(3n) {
-  animation-delay: 1000ms;
+    animation-delay: 1000ms;
 }
 
 @keyframes chegando-de-cima {
-  from  {
-    opacity: 0.2;
-    transform: translate3d(0, -100%, 0);
-  }
-  to  {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+    from {
+        opacity: 0.2;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 /* estilizando o menu superior */
 #logo {
-  float: left;
-  height: 1.25em;
-  margin-right: 0.5em;
+    float: left;
+    height: 1.25em;
+    margin-right: 0.5em;
 }
 
 #menu-principal ul {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-left: 1px solid rgba(0, 0, 0, .2);
-  border-right: 1px solid rgba(255, 255, 255, .1);
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #menu-principal li {
-  display: inline-block;
-  list-style-type: none;
-  list-style-image: none;
-  margin: 0;
-  border-left: 1px solid rgba(255, 255, 255, .1);
-  border-right: 1px solid rgba(0, 0, 0, .2);
+    display: inline-block;
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 #menu-principal a {
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  padding: 2em 1.5em 0.75em;
-  color: currentColor;
-  text-decoration: none;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 2em 1.5em 0.75em;
+    color: currentColor;
+    text-decoration: none;
 }
 
 #menu-principal a::before {
-  content: " ";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  opacity: 0.05;
-  transition: opacity 200ms ease;
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.05;
+    transition: opacity 200ms ease;
 }
 
 #menu-principal a:hover::before {
-  opacity: 0.25;
+    opacity: 0.25;
 }
 
 #menu-principal li:nth-child(1) a::before {
-  background-color: #128fff;
+    background-color: #128fff;
 }
 
 #menu-principal li:nth-child(2) a::before {
-  background-color: #d012ff;
+    background-color: #d012ff;
 }
 
 #menu-principal li:nth-child(3) a::before {
-  background-color: #12ff59;
+    background-color: #12ff59;
 }
 
 /* layout do conteúdo principal da página */
 main {
-  padding: 1em;
+    padding: 1em;
 }
 
 .aba-conteudo {
-  display: none;
+    display: none;
 }
 
 .aba-conteudo.ativa {
-  display: block;
+    display: block;
 }
 
 /* estilos do exercício da gravitação */
 #gravitacao .colunas {
-  display: flex;
-  flex-direction: row;
-  gap: 3em;
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
 }
 
 #gravitacao .coluna {
-  flex: 1;
+    flex: 1;
 }
 
 #gravitacao input {
-  width: 6em;
+    width: 6em;
 }
 
 .controles {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-  margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-bottom: 1em;
 }
 
 /* estilos do exercício dos aliens */
 #aliens p {
-  white-space: nowrap;
-  height: 1.2em;
-  font-size: 1em;
-  line-height: 1.2em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    white-space: nowrap;
+    height: 1.2em;
+    font-size: 1em;
+    line-height: 1.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #aliens p.expandido {
-  white-space: normal;
-  height: auto;
+    white-space: normal;
+    height: auto;
 }
 
 .botao-expandir-retrair {
-  box-sizing: border-box;
-  height: 1em;
-  width: 1em;
-  padding: 0;
-  margin: 0 .5em 0 0;
-  font-size: inherit;
-  line-height: 1em;
-  border-width: 1px;
+    box-sizing: border-box;
+    height: 1em;
+    width: 1em;
+    padding: 0;
+    margin: 0 0.5em 0 0;
+    font-size: inherit;
+    line-height: 1em;
+    border-width: 1px;
 }
 
 /* estilos do exercício philae */
 #galeria {
-  margin: 0 auto;
-  max-width: 700px;
+    margin: 0 auto;
+    max-width: 700px;
 }
 
 #slide {
-  aspect-ratio: auto 739 / 415;
-  border: 1px solid gray;
-  display: block;
-  max-width: 100%;
+    aspect-ratio: auto 739 / 415;
+    border: 1px solid gray;
+    display: block;
+    max-width: 100%;
 }
 
 .navegar {
-  width: 150px;
-  padding: 0.5em 0.5em;
-  margin-top: 2px;
-  font-size: 1em;
-  border: 2px solid currentColor;
-  background-color: transparent;
-  color: #999;
-  transition: all 100ms ease;
+    width: 150px;
+    padding: 0.5em 0.5em;
+    margin-top: 2px;
+    font-size: 1em;
+    border: 2px solid currentColor;
+    background-color: transparent;
+    color: #999;
+    transition: all 100ms ease;
 }
 
 .navegar:hover {
-  color: white;
-  cursor: pointer;
+    color: white;
+    cursor: pointer;
 }
 
 .navegar:active {
-  text-indent: 2px;
+    text-indent: 2px;
 }
 
 #anterior {
-  float: left;
-  border-radius: 0 0 0 10px;
+    float: left;
+    border-radius: 0 0 0 10px;
 }
 
 #proximo {
-  float: right;
-  border-radius: 0 0 10px 0;
+    float: right;
+    border-radius: 0 0 10px 0;
 }
 
 #anterior:hover {
-  transform: translateX(-5px);
+    transform: translateX(-5px);
 }
 
 #proximo:hover {
-  transform: translateX(5px);
+    transform: translateX(5px);
 }
